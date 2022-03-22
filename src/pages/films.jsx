@@ -1,49 +1,41 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 
 const FilmCard = (props) => {
 
     const { userid } = useParams();
 
-    const [details, setDetails] = useState(null);
+    const navigate = useNavigate();
+
+    const handleHomeClick = () => {
+        navigate('/');
+    }
+    
+    const [films, setFilms] = useState([]);
 
     useEffect(() => {
         fetch('https://ghibliapi.herokuapp.com/films')
             .then(res => res.json())
-            .then(data => setDetails(data))
+            .then(data => setFilms(data))
             .catch(e => alert(e.message));
     }, []);
 
-    if (!details) {
-        return <h1>Loading...</h1>
-    }
-
     return (
         <>
-            <main className="container">
-                <section className="row justify-content-center mt-5">
-                    <div className="col-md-6" key={`user-card-${props.id}`}>
-                        <div className="card shadow my-2">
-                            <div className="card-body">
-                                <div><img className="moviePosters card-img-top" src={props.film.image} /></div>
-                                <hr />
-                                <h4 className="card-title">{props.film.title}</h4>
-                                <hr />
-                                <p className="card-text"><span className="text-muted">Produced by </span>{props.film.producer}</p>
-                                <hr />
-                                <p className="card-text"><span className="text-muted">Directed by </span>{props.film.director}</p>
-                                <hr />
-                                <p className="card-text"><span className="text-muted">Released in </span>{props.film.release_date}</p>
-                                <hr />
-                                <p className="card-text"><span className="text-muted">Rotten Tomato Score </span>{props.film.rt_score > 50 ? <span className="text-success">{props.film.rt_score}</span> : <span className="text-danger">{props.film.rt_score}</span>}</p>
-                                <hr />
-                                <p className="card-text">{props.film.description}</p>
-                                <a target="_blank" href={"https://ghibliapi.herokuapp.com/films/" + props.film.id}>API Resource Link</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
+            <div className="col-md-6">
+            <ul className="list=group">
+                {films.map((film) => (
+                    <li
+                        key={`film-${film.id}`}
+                        className="list-group-item d-flex justify-content-between align-items-center">
+                        <span>{film.title}</span>
+                        <Link to={`/film/${film.id}`} className="btn btn-outline-primary">
+                            Full Details
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
         </>
     )
 }

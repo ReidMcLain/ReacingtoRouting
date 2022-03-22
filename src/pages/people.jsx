@@ -7,8 +7,6 @@ const PeopleCard = (props) => {
 
     const navigate = useNavigate();
 
-    const [details, setDetails] = useState(null);
-
     const handleHomeClick = () => {
         navigate('/');
     }
@@ -22,10 +20,6 @@ const PeopleCard = (props) => {
             .catch(e => alert(e.message));
     }, []);
 
-    if (!details) {
-        return <h1>Loading...</h1>
-    }
-
     return (
         <div className="col-md-6">
             <ul className="list=group">
@@ -33,12 +27,10 @@ const PeopleCard = (props) => {
                     <li
                         key={`people-${people.id}`}
                         className="list-group-item d-flex justify-content-between align-items-center">
-                        <span>{people.peoplename}</span>
+                        <span>{people.name}</span>
                         <Link to={`/peoples/${people.id}`} className="btn btn-outline-primary">
                             Full Details
                         </Link>
-                        <Link to="/">Home</Link>
-                        <button onClick={handleHomeClick}>Go Back Home ... Imperatively ;)</button>
                     </li>
                 ))}
             </ul>
