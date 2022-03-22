@@ -28,7 +28,7 @@ const PeopleCard = (props) => {
                         key={`people-${people.id}`}
                         className="list-group-item d-flex justify-content-between align-items-center">
                         <span>{people.name}</span>
-                        <Link to={`/peoples/${people.id}`} className="btn btn-outline-primary">
+                        <Link to={`/people/${people.id}`} className="btn btn-outline-primary">
                             Full Details
                         </Link>
                     </li>

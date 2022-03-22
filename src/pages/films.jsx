@@ -29,7 +29,7 @@ const FilmCard = (props) => {
                         key={`film-${film.id}`}
                         className="list-group-item d-flex justify-content-between align-items-center">
                         <span>{film.title}</span>
-                        <Link to={`/film/${film.id}`} className="btn btn-outline-primary">
+                        <Link to={`/films/${film.id}`} className="btn btn-outline-primary">
                             Full Details
                         </Link>
                     </li>

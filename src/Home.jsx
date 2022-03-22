@@ -15,7 +15,7 @@ const Home = () => {
                     <div className="col-md-6">
                         <div className="card shadow my-2">
                             <div className="card-body">
-                                <h4 className="d-flex flex-direction-row align-items-center" id="frontPageCardTitle">Studio Ghibli API Lab</h4>
+                                <h4 className="d-flex flex-direction-row align-items-center" id="frontPageCardTitle">Studio Ghibli Routing Lab</h4>
                                 <p className="card-text">This labs shows off my understanding routing and fetching data through API's and routing the pages accordingly. :)</p>
                                 <p className="text-muted">Check out more cool projects at https://github.com/ReidMcLain</p>
                             </div>
