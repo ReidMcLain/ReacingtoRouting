@@ -1,3 +1,26 @@
 #TotoroPic {
-    height: 300px;
+    height: 100px;
   }
+
+  #NavBar {
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-evenly;
+  }
+
+  #NavWords {
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-evenly;
+  }
+
+  .MoviePosters {
+    display: flex;
+    align-content: center;
+    height: auto;
+    max-height: 100px;
+    width: auto;
+    max-width: 100px;
+}

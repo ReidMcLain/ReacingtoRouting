@@ -5,10 +5,6 @@ const SinglePerson = () => {
 
     const navigate = useNavigate();
 
-    const handleHomeClick = () => {
-        navigate('/');
-    }
-
     const { peopleid } = useParams();
 
     const [people, setPeople] = useState({});

@@ -1,15 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const PeopleCard = (props) => {
-    
-    const { userid } = useParams();
 
     const navigate = useNavigate();
-
-    const handleHomeClick = () => {
-        navigate('/');
-    }
 
     const [people, setPeople] = useState([]);
 
@@ -21,7 +15,7 @@ const PeopleCard = (props) => {
     }, []);
 
     return (
-        <div className="col-md-6">
+        <div className="col">
             <ul className="list=group">
                 {people.map((people) => (
                     <li
@@ -29,7 +23,7 @@ const PeopleCard = (props) => {
                         className="list-group-item d-flex justify-content-between align-items-center">
                         <span>{people.name}</span>
                         <Link to={`/people/${people.id}`} className="btn btn-outline-primary">
-                            Full Details
+                            Person Info
                         </Link>
                     </li>
                 ))}

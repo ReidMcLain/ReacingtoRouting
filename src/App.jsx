@@ -10,11 +10,12 @@ import SinglePerson from "./pages/Person";
 
 const App = () => {
 
-
     return (
         <BrowserRouter>
-            <NavBar />
-             <img id="TotoroPic" src={Totoro} />
+            <div id="NavBar" className="col">
+                <img id="TotoroPic" src={Totoro} />
+                <NavBar />
+            </div>
             <main className="container mt-5">
                 <section className="row-justify-content-center">
                     <Routes>
@@ -22,7 +23,7 @@ const App = () => {
                         <Route path="/films" element={<FilmCard />} />
                         <Route path="/films/:filmid" element={<SingleFilm />} />
                         <Route path="/people" element={<PeopleCard />} />
-                        <Route path="/people/:peopleid" element={<SinglePerson />}/>
+                        <Route path="/people/:peopleid" element={<SinglePerson />} />
                     </Routes>
                 </section>
             </main>

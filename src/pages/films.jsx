@@ -1,16 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const FilmCard = (props) => {
-
-    const { userid } = useParams();
+const FilmCard = () => {
 
     const navigate = useNavigate();
 
-    const handleHomeClick = () => {
-        navigate('/');
-    }
-    
     const [films, setFilms] = useState([]);
 
     useEffect(() => {
@@ -22,20 +16,20 @@ const FilmCard = (props) => {
 
     return (
         <>
-            <div className="col-md-6">
-            <ul className="list=group">
-                {films.map((film) => (
-                    <li
-                        key={`film-${film.id}`}
-                        className="list-group-item d-flex justify-content-between align-items-center">
-                        <span>{film.title}</span>
-                        <Link to={`/films/${film.id}`} className="btn btn-outline-primary">
-                            Full Details
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </div>
+            <div className="col">
+                <ul className="list=group">
+                    {films.map((film) => (
+                        <li
+                            key={`film-${film.id}`}
+                            className="list-group-item d-flex justify-content-between align-items-center">
+                            <span>{film.title}</span>
+                            <Link to={`/films/${film.id}`} className="btn btn-outline-primary">
+                                Movie Info
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </>
     )
 }

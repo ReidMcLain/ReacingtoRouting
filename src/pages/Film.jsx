@@ -24,7 +24,7 @@ const SingleFilm = () => {
         <>
             <main className="container">
                 <section className="row justify-content-center mt-5">
-                    <div className="col-md-6" key={`user-card-${film.id}`}>
+                    <div className="col-md-3" key={`user-card-${film.id}`}>
                         <div className="card shadow my-2">
                             <div className="card-body">
                                 <div><img className="moviePosters card-img-top" src={film.image}/></div>
