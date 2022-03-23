@@ -16,14 +16,14 @@ const PeopleCard = (props) => {
 
     return (
         <div className="col">
-            <ul className="list=group">
+            <ul className="list-group">
                 {people.map((people) => (
                     <li
                         key={`people-${people.id}`}
                         className="list-group-item d-flex justify-content-between align-items-center">
                         <span>{people.name}</span>
                         <Link to={`/people/${people.id}`} className="btn btn-outline-primary">
-                            Person Info
+                            Person Details
                         </Link>
                     </li>
                 ))}

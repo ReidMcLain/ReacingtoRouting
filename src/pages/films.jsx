@@ -17,7 +17,7 @@ const FilmCard = () => {
     return (
         <>
             <div className="col">
-                <ul className="list=group">
+                <ul className="list-group">
                     {films.map((film) => (
                         <li
                             key={`film-${film.id}`}

@@ -24,3 +24,17 @@
     width: auto;
     max-width: 100px;
 }
+
+.list-group-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  min-width: 410px;
+}
+
+.list-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
